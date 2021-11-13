@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: better-reads-application
+
+server:
+  port: 8081
