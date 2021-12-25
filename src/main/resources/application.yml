@@ -8,6 +8,28 @@ spring:
           github:
             client-id: <clientID>
             client-secret: <clientSecret>
+  data:
+    cassandra:
+      keyspace-name: <keyspace-name>
+      username: <client-id>
+      password: <secret>
+      schema-action: create_if_not_exists
+      request:
+        timeout: 10s
+      connection:
+        connect-timeout: 10s
+        init-query-timeout: 10s
+    application:
+      name: cassandra-data-loader
+
+datastax.astra:
+    secure-connect-bundle: secure-connect.zip
+
+astra.db:
+    id: <datacenter-id>
+    region: <region>
+    keyspace: <keyspace-name>
+    application-token: <token>
 
 server:
   port: 8081
