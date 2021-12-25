@@ -27,7 +27,7 @@ public class AppSecurityAdapter extends WebSecurityConfigurerAdapter {
     /**
      * @apiNote : To configure the spring-security authorization to login vai OAuth2Login
      * @param http : {@link HttpSecurity}
-     * @throws Exception
+     * @throws Exception : some http-security exception
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -35,8 +35,10 @@ public class AppSecurityAdapter extends WebSecurityConfigurerAdapter {
         // @formatter:off
         http
                 .authorizeRequests(a -> a
-                        .antMatchers(contextPath, contextPath + "/error").permitAll()
-                        .anyRequest().authenticated()
+//                        .antMatchers(contextPath, contextPath + "/error").permitAll()
+//                        .anyRequest().authenticated()
+                        // To allow all urls without authentication
+                        .anyRequest().permitAll()
                 )
                 .exceptionHandling(e -> e
                         .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
