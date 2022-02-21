@@ -21,8 +21,12 @@ public class AppSecurityAdapter extends WebSecurityConfigurerAdapter {
     /**
      * @apiNote : To get the spring-context path
      */
+    private final ServletContext servletContext;
+
     @Autowired
-    private ServletContext servletContext;
+    public AppSecurityAdapter(ServletContext servletContext) {
+        this.servletContext = servletContext;
+    }
 
     /**
      * @apiNote : To configure the spring-security authorization to login vai OAuth2Login
