@@ -17,8 +17,8 @@ import java.util.List;
  */
 @Data
 @Table(value = "book_by_id")
-public class Book {
-
+public class Book
+{
     @Id
     @PrimaryKeyColumn(name = "book_id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private String id;

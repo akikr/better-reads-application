@@ -15,16 +15,18 @@ import javax.servlet.ServletContext;
  * @author ankit
  * @since 1.0
  */
-@Configuration
-public class AppSecurityAdapter extends WebSecurityConfigurerAdapter {
 
+@Configuration
+public class AppSecurityAdapter extends WebSecurityConfigurerAdapter
+{
     /**
      * @apiNote : To get the spring-context path
      */
     private final ServletContext servletContext;
 
     @Autowired
-    public AppSecurityAdapter(ServletContext servletContext) {
+    public AppSecurityAdapter(ServletContext servletContext)
+    {
         this.servletContext = servletContext;
     }
 
@@ -34,7 +36,8 @@ public class AppSecurityAdapter extends WebSecurityConfigurerAdapter {
      * @throws Exception : some http-security exception
      */
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(HttpSecurity http) throws Exception
+    {
         String contextPath = servletContext.getContextPath() + "/";
         // @formatter:off
         http

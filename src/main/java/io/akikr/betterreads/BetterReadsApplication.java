@@ -11,9 +11,10 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
  */
 @SpringBootApplication
 @EnableConfigurationProperties(DataStaxAstraProperties.class)
-public class BetterReadsApplication {
-
-    public static void main(String[] args) {
+public class BetterReadsApplication
+{
+    public static void main(String[] args)
+    {
         SpringApplication.run(BetterReadsApplication.class, args);
     }
 

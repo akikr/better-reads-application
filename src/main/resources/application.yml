@@ -1,3 +1,8 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /better-reads-app
+
 spring:
   application:
     name: better-reads-application
@@ -19,8 +24,6 @@ spring:
       connection:
         connect-timeout: 10s
         init-query-timeout: 10s
-    application:
-      name: cassandra-data-loader
 
 datastax.astra:
     secure-connect-bundle: secure-connect.zip
@@ -31,7 +34,19 @@ astra.db:
     keyspace: <keyspace-name>
     application-token: <token>
 
-server:
-  port: 8081
-#  servlet:
-#    context-path: /better-reads-app
+app:
+  cover-image-base-url: https://covers.openlibrary.org/b/id/
+  search-base-url: https://openlibrary.org/search.json
+
+  # To enable logging for the request & response of any internal api call(s) to this application
+  internal-logger-enable: true
+  # WebClient configurations
+  web-client:
+    # Http request connection timeout: default is 10000 (in milliseconds)
+    connection-timeout: 10000
+    # Http response read timeout: default is 10000 (in milliseconds)
+    read-timeout: 10000
+    # MemoryBufferSize calculated as: 16 * 1024 * 1204 = 16777216 Byte = 16 MB, default is 256 KB & -1 is for unlimited
+    max-memory-buffer-size: 16777216
+    # To enable logging for the request & response of any external api call(s)
+    logger-enable: false

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
  * @author ankit
  */
 @Repository
-public interface BookRepository extends CassandraRepository<Book, String> {
+public interface BookRepository extends CassandraRepository<Book, String>
+{
 
 }
