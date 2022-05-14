@@ -14,7 +14,9 @@ import java.util.List;
 /**
  * @apiNote : An Book entity to persist the book object in database
  * @author ankit
+ * @since 1.0
  */
+
 @Data
 @Table(value = "book_by_id")
 public class Book
@@ -31,7 +33,7 @@ public class Book
     @CassandraType(type = CassandraType.Name.TEXT)
     private String description;
 
-    @Column("published_date ")
+    @Column("published_date")
     @CassandraType(type = CassandraType.Name.DATE)
     private LocalDate publishedDate;
 

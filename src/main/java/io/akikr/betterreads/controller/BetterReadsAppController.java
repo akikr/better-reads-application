@@ -22,7 +22,6 @@ public class BetterReadsAppController
     @RequestMapping("/user")
     public String user(@AuthenticationPrincipal OAuth2User principal)
     {
-        System.out.println(principal);
         return ("<h1>" + principal.getAttribute("name") +  "</h1>" + "<h2>" + principal.getAttribute("email") + "</h2>");
     }
 }
