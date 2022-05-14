@@ -15,7 +15,7 @@ import java.time.LocalDate;
  */
 
 @Data
-@Table(value = "book_by_user")
+@Table(value = "book_by_user_id_and_book_id")
 public class UserBooks
 {
 	@PrimaryKey
