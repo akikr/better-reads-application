@@ -125,7 +125,7 @@ public class InternalLogger implements Filter
      * Using below given HttpServletRequestWrapper,
      * you can read HTTP request body and then the servlet can still read it later.
      * Essentially, request body content is cached inside wrapper
-     * object so it can be N number of times in complete request lifecycle.
+     * object, so it can be N number of times in complete request lifecycle.
      */
 
     private static class CustomHttpRequestWrapper extends HttpServletRequestWrapper
