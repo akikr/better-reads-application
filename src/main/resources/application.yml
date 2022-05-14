@@ -1,7 +1,7 @@
 server:
   port: 8081
-  servlet:
-    context-path: /better-reads-app
+#  servlet:
+#    context-path: /better-reads-app
 
 spring:
   application:
@@ -26,7 +26,7 @@ spring:
         init-query-timeout: 10s
 
 datastax.astra:
-    secure-connect-bundle: secure-connect.zip
+  secure-connect-bundle: secure-connect.zip
 
 astra.db:
     id: <datacenter-id>
