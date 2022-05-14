@@ -36,19 +36,19 @@ import java.util.List;
  * @apiNote To Log internal request-response of a {@link SpringBootApplication}, just create the bean of this class like this:
  * <pre>{@code
  *      @Bean
- *      public InternalLoggerUtility getInternalLoggerUtility()
+ *      public InternalLogger getInternalLoggerUtility()
  *      {
- *      	return new InternalLoggerUtility(isEnable);
+ *      	return new InternalLogger(isEnable);
  *      }
  * }</pre>
  */
 
 @Slf4j
-public class InternalLoggerUtility implements Filter
+public class InternalLogger implements Filter
 {
     private final boolean isEnable;
 
-    public InternalLoggerUtility(boolean isEnable)
+    public InternalLogger(boolean isEnable)
     {
         this.isEnable = isEnable;
     }

@@ -1,6 +1,6 @@
 package io.akikr.betterreads.config;
 
-import io.akikr.betterreads.utils.InternalLoggerUtility;
+import io.akikr.betterreads.utils.InternalLogger;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,12 +29,12 @@ public class CommonClientConfig
 	/**
 	 * @apiNote To Log internal request-response of this application :
 	 * {@link io.akikr.betterreads.BetterReadsApplication}
-	 * @return {@link InternalLoggerUtility}
+	 * @return {@link InternalLogger}
 	 */
 	@Bean
-	public InternalLoggerUtility getInternalLoggerUtility()
+	public InternalLogger getInternalLogger()
 	{
-		return new InternalLoggerUtility(isEnable);
+		return new InternalLogger(isEnable);
 	}
 
 	/**
