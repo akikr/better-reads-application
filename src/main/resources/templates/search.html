@@ -19,6 +19,7 @@
     </nav>
 
     <div th:insert="components/book-search :: search-panel"></div>
+
     <section class="content">
         <div class="card-group">
             <div class="card" style="flex: 0 0 18%; margin: 30px;" th:each="result: ${searchResults}">

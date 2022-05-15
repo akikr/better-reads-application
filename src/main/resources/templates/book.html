@@ -19,6 +19,7 @@
         </nav>
 
         <div th:insert="components/book-search :: search-panel"></div>
+
         <section class="content">
             <div class="card">
                 <div class="row g-0">
@@ -28,11 +29,20 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title display-1" th:text="${book.name}">Book Name</h5>
-                            <p class="card-text display-5" th:text="${book.authorNames}">Author name</p>
+                            <p class="card-text display-6" th:text="${book.authorNames}">Author name</p>
                             <p class="card-text" th:text="${book.description}">Book description</p>
                             <p class="card-text">Published Date: <small class="text-muted" th:text="${book.publishedDate}">2020-01-01</small></p>
 
-                            <!-- Show only id user is logged in -->
+                            <!-- Show if user is NOT logged-in -->
+                            <div class="card" th:unless="${loginId}">
+                                <div class="card-body">
+                                    <h5 class="card-title">Login to track this book</h5>
+                                    <p class="card-text">Mark reading dates, completion status and star ratings</p>
+                                    <a href="/oauth2/authorization/github" class="btn btn-primary">Login via GitHub</a>
+                                </div>
+                            </div>
+
+                            <!-- Show only id user is logged-in -->
                             <form th:if="${loginId}" th:attr="action=@{/add-user-book}" method="POST">
                                 <div class="mb-3">
                                     <label for="startDate" class="sr-only">Start Date</label>
@@ -45,10 +55,10 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="readingStatus">Reading Status</label>
                                     <select class="form-select" id="readingStatus" aria-label="Reading Status" name="readingStatus" th:field="${userBooks.readingStatus}">
-                                        <option selected value="0">Status</option>
-                                        <option value="reading">Currently Reading</option>
-                                        <option value="finished">Finished Reading</option>
-                                        <option value="nsr">Not Started Reading</option>
+                                        <option selected value="3">Status</option>
+                                        <option value="0-reading">Currently Reading</option>
+                                        <option value="1-finished">Finished Reading</option>
+                                        <option value="2-nsr">Not Started Reading</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">

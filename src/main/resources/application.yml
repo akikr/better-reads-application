@@ -37,7 +37,6 @@ astra.db:
 app:
   cover-image-base-url: https://covers.openlibrary.org/b/id/
   search-base-url: https://openlibrary.org/search.json
-
   # To enable logging for the request & response of any internal api call(s) to this application
   internal-logger-enable: false
   # WebClient configurations
@@ -46,7 +45,11 @@ app:
     connection-timeout: 10000
     # Http response read timeout: default is 10000 (in milliseconds)
     read-timeout: 10000
-    # MemoryBufferSize calculated as: 16 * 1024 * 1204 = 16777216 Byte = 16 MB, default is 256 KB & -1 is for unlimited
-    max-memory-buffer-size: 16777216
+    # MemoryBufferSize calculated as: 10 * 1024 * 1204 = 1048576 Byte = 10 MB, default is 256 KB & -1 is for unlimited
+    max-memory-buffer-size: 10485760
     # To enable logging for the request & response of any external api call(s)
     logger-enable: false
+
+# Define custom logging configurations in this logback.xml file as required
+#logging:
+#  config: /opt/akikr/config/better-reads-application/logback.xml
