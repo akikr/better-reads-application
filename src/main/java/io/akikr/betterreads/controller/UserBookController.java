@@ -1,13 +1,13 @@
 package io.akikr.betterreads.controller;
 
 import com.datastax.oss.driver.api.core.uuid.Uuids;
-import io.akikr.betterreads.models.Book;
-import io.akikr.betterreads.models.BooksByUser;
-import io.akikr.betterreads.models.UserBooks;
-import io.akikr.betterreads.models.UserBooksPrimaryKey;
-import io.akikr.betterreads.repository.BookRepository;
-import io.akikr.betterreads.repository.BooksByUserRepository;
-import io.akikr.betterreads.repository.UserBooksRepository;
+import io.akikr.betterreads.db.entity.Book;
+import io.akikr.betterreads.db.entity.BooksByUser;
+import io.akikr.betterreads.db.entity.UserBooks;
+import io.akikr.betterreads.db.entity.UserBooksPrimaryKey;
+import io.akikr.betterreads.db.repository.BookRepository;
+import io.akikr.betterreads.db.repository.BooksByUserRepository;
+import io.akikr.betterreads.db.repository.UserBooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;

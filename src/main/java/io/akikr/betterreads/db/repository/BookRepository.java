@@ -1,6 +1,6 @@
-package io.akikr.betterreads.repository;
+package io.akikr.betterreads.db.repository;
 
-import io.akikr.betterreads.models.Book;
+import io.akikr.betterreads.db.entity.Book;
 import org.springframework.data.cassandra.repository.CassandraRepository;
 import org.springframework.stereotype.Repository;
 

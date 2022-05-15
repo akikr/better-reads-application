@@ -1,6 +1,6 @@
-package io.akikr.betterreads.repository;
+package io.akikr.betterreads.db.repository;
 
-import io.akikr.betterreads.models.BooksByUser;
+import io.akikr.betterreads.db.entity.BooksByUser;
 import org.springframework.data.cassandra.repository.CassandraRepository;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;

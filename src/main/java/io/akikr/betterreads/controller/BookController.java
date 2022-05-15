@@ -1,10 +1,10 @@
 package io.akikr.betterreads.controller;
 
-import io.akikr.betterreads.models.Book;
-import io.akikr.betterreads.models.UserBooks;
-import io.akikr.betterreads.models.UserBooksPrimaryKey;
-import io.akikr.betterreads.repository.BookRepository;
-import io.akikr.betterreads.repository.UserBooksRepository;
+import io.akikr.betterreads.db.entity.Book;
+import io.akikr.betterreads.db.entity.UserBooks;
+import io.akikr.betterreads.db.entity.UserBooksPrimaryKey;
+import io.akikr.betterreads.db.repository.BookRepository;
+import io.akikr.betterreads.db.repository.UserBooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

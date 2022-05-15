@@ -1,4 +1,4 @@
-package io.akikr.betterreads.models;
+package io.akikr.betterreads.db.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

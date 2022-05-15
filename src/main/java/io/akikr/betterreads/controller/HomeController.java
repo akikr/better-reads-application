@@ -1,7 +1,7 @@
 package io.akikr.betterreads.controller;
 
-import io.akikr.betterreads.models.BooksByUser;
-import io.akikr.betterreads.repository.BooksByUserRepository;
+import io.akikr.betterreads.db.entity.BooksByUser;
+import io.akikr.betterreads.db.repository.BooksByUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.cassandra.core.query.CassandraPageRequest;
@@ -19,7 +19,7 @@ import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
 /**
- * @apiNote The HomeController to show home login page
+ * @apiNote The main application controller
  * @author ankit
  * @since 1.0
  */
