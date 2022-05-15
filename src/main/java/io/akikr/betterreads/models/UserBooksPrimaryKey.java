@@ -6,7 +6,7 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKeyClass;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 
 /**
- * @apiNote : An UserBooksPrimaryKey class to persist the primary keys for UserBooks entity
+ * @apiNote An UserBooksPrimaryKey class to persist the primary keys for UserBooks entity
  * @author ankit
  * @since 1.0
  */

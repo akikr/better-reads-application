@@ -19,7 +19,7 @@ import java.util.Optional;
 import static java.util.Objects.nonNull;
 
 /**
- * @apiNote : The BookController to get book data from cassandra database
+ * @apiNote The BookController to get book data from cassandra database
  * @author ankit
  * @since 1.0
  */

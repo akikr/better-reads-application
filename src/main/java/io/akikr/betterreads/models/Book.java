@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * @apiNote : An Book entity to persist the book object in database
+ * @apiNote A Book entity to persist the book object in database
  * @author ankit
  * @since 1.0
  */

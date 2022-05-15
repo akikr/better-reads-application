@@ -9,7 +9,7 @@ import org.springframework.data.cassandra.core.mapping.Table;
 import java.time.LocalDate;
 
 /**
- * @apiNote : An UserBooks entity to persist the book info for a user
+ * @apiNote An UserBooks entity to persist the book info for a user
  * @author ankit
  * @since 1.0
  */
@@ -29,7 +29,7 @@ public class UserBooks
 	@CassandraType(type = CassandraType.Name.DATE)
 	private LocalDate completedDate;
 
-	@Column("reading-status")
+	@Column("reading_status")
 	@CassandraType(type = CassandraType.Name.TEXT)
 	private String readingStatus;
 
