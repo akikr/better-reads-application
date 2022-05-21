@@ -62,7 +62,7 @@ public class WebClientLogger
 	{
 		StringBuilder requestBuilder = new StringBuilder();
 		inboundRequest.onRequestBegin(request -> requestBuilder
-				.append("\n====================== OUTBOUND REST REQUEST =========================")
+				.append("\n---------------------- OUTBOUND REST REQUEST -------------------------")
 				.append("\nRequest URI: ").append(request.getURI())
 				.append("\nRequest Method: ").append(request.getMethod()));
 
@@ -80,7 +80,7 @@ public class WebClientLogger
 
 		StringBuilder responseBuilder = new StringBuilder();
 		inboundRequest.onResponseBegin(response -> responseBuilder
-				.append("\n====================== INBOUND REST RESPONSE =========================")
+				.append("\n---------------------- INBOUND REST RESPONSE -------------------------")
 				.append("\nResponse Status: ").append(response.getStatus()));
 
 		inboundRequest.onResponseHeaders(response -> {
@@ -99,13 +99,13 @@ public class WebClientLogger
 		inboundRequest.onRequestSuccess(request -> {
 			String body = requestBody.toString();
 			requestBuilder.append(StringUtils.hasText(body) ? body : "[no-body]")
-					.append("\n=====================================================================");
+					.append("\n---------------------------------------------------------------------");
 			log.info(requestBuilder.toString());
 		});
 		inboundRequest.onResponseSuccess(response -> {
 			String body = responseBody.toString();
 			responseBuilder.append(StringUtils.hasText(body) ? body : "[no-body]")
-					.append("\n=====================================================================");
+					.append("\n---------------------------------------------------------------------");
 			log.info(responseBuilder.toString());
 		});
 

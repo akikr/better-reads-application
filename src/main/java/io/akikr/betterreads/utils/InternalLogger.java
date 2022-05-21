@@ -64,23 +64,23 @@ public class InternalLogger implements Filter
         {
             CustomHttpRequestWrapper requestWrapper = new CustomHttpRequestWrapper((HttpServletRequest) servletRequest);
 
-            String requestBuilder = "\n====================================== Internal flow starts ======================================"
+            String requestBuilder = "\n===================================== Inbound REST Request ====================================="
                     + "\nRequest URI: " + requestWrapper.getRequestURI()
                     + "\nRequest Method: " + requestWrapper.getMethod()
                     + "\nRequest Headers: " + getRequestHeaders(requestWrapper)
                     + "\nRequest Body: " + getRequestBody(requestWrapper)
-                    + "\n========================================";
+                    + "\n==========================================================================";
             log.info(requestBuilder);
 
             CustomHttpResponseWrapper responseWrapper = new CustomHttpResponseWrapper((HttpServletResponse) servletResponse);
 
             filterChain.doFilter(requestWrapper, responseWrapper);
 
-            String responseBuilder = "\n========================================"
+            String responseBuilder = "\n===================================== Outbound REST Response ====================================="
                     + "\nResponse Status: " + responseWrapper.getStatus()
                     + "\nResponse Headers: " + getResponseHeaders(responseWrapper)
                     + "\nResponse Body: " + getResponseBody(responseWrapper)
-                    + "\n====================================== Internal flow ends ======================================";
+                    + "\n==========================================================================";
             log.info(responseBuilder);
         }
         else
